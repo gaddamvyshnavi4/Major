@@ -60,7 +60,7 @@ if 'message_spoken' not in get_state():
 
 # Speak the message for introduction if it hasn't been spoken before
 if not get_state().message_spoken['intro']:
-    #speak1("Please provide the following details for crop yield prediction.")
+    speak1("Please provide the following details for crop yield prediction.")
     get_state().message_spoken['intro'] = True
 
 # Speak the message for state names if it hasn't been spoken before

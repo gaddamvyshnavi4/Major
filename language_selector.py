@@ -50,7 +50,7 @@ def select_language(language):
             def predict_production(state_names, district_names, season_names, crop_names, area, temperature, wind_speed, precipitation, humidity, soil_type):
     
                 features = np.array([[state_names, district_names, season_names, crop_names, area, temperature, wind_speed,precipitation, humidity, soil_type]], dtype=object)
-                print(features)
+                st.write(features)
                 # Transform the features using the preprocessor
                 transformed_features = f.transform(features)
 

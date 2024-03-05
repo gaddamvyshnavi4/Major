@@ -8,4 +8,4 @@ pandas==2.1.4
 scikit-learn==1.2.2
 streamlit==1.31.1
 gtts==2.5.1
-pyttsx3
+PyGObjec==3.46.0

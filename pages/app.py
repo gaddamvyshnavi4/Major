@@ -32,23 +32,15 @@ def predict_production(state_names, district_names, season_names, crop_names, ar
 
 # Streamlit UI
 st.title('Crop Yield Prediction')
-engine = None
-
-def get_engine():
-    global engine
-    if engine is None:
-        import pyttsx3
-        engine = pyttsx3.init()
-    return engine
-engine = get_engine()
+#engine = pyttsx3.init()
 
 # Function to convert text to speech
-def speak1(text):
-    if not engine._inLoop:
-        engine.say(text)
-        engine.startLoop(False)
-        engine.iterate()
-        engine.endLoop()
+#def speak1(text):
+#    if not engine._inLoop:
+#        engine.say(text)
+#        engine.startLoop(False)
+#        engine.iterate()
+#        engine.endLoop()
 def get_state():
     return st.session_state
 
@@ -60,7 +52,7 @@ if 'message_spoken' not in get_state():
 
 # Speak the message for introduction if it hasn't been spoken before
 if not get_state().message_spoken['intro']:
-    speak1("Please provide the following details for crop yield prediction.")
+    #speak1("Please provide the following details for crop yield prediction.")
     get_state().message_spoken['intro'] = True
 
 # Speak the message for state names if it hasn't been spoken before
@@ -76,7 +68,7 @@ state_names_options = ['Andaman and Nicobar Islands', 'Andhra Pradesh',
        'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana',
        'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal']
 if not get_state().message_spoken['state']:
-    speak1("Enter State Name")
+    #speak1("Enter State Name")
     get_state().message_spoken['state'] = True
 state_names = st.selectbox('Select State Name', state_names_options)
 
@@ -90,7 +82,7 @@ if state_names:
     
 # Speak the prompts if they haven't been spoken before
 if not get_state().message_spoken['district']:
-    speak1("Enter District Name")
+    #speak1("Enter District Name")
     get_state().message_spoken['district'] = True
 #time.sleep(2) 
 #speak("District Names")
@@ -103,7 +95,7 @@ season_names_stripped = [season.strip() for season in season]
 # Selectbox for choosing season names
 season_names = st.selectbox('Select Season', season_names_stripped)
 if not get_state().message_spoken['season']:
-    speak1("Enter Season Name")
+    #speak1("Enter Season Name")
     get_state().message_spoken['season'] = True
 #time.sleep(1) 
 #speak("Season Names")
@@ -114,14 +106,14 @@ if district_names:
     crop_names=st.selectbox('select crop',crop_by_district[district_names])
 
 if not get_state().message_spoken['crop']:
-    speak1("Enter Crop Name")
+    #speak1("Enter Crop Name")
     get_state().message_spoken['crop'] = True
 #time.sleep(2) 
 #speak("Crop Names")
 
 area = st.number_input('Area', min_value=1, max_value=8580100)
 if not get_state().message_spoken['area']:
-    speak1("Enter Area")
+    #speak1("Enter Area")
     get_state().message_spoken['area'] = True
 #time.sleep(2) 
 #speak("Area")
@@ -129,7 +121,7 @@ if not get_state().message_spoken['area']:
 # Number input for temperature with a specified range
 temperature = st.number_input('Temperature', min_value=2.43, max_value=26.0)
 if not get_state().message_spoken['temperature']:
-    speak1("Enter Temperature")
+    #speak1("Enter Temperature")
     get_state().message_spoken['temperature'] = True
 #time.sleep(4) 
 #speak("Temperature")
@@ -138,7 +130,7 @@ if not get_state().message_spoken['temperature']:
 wind_speed = st.number_input('Wind Speed', min_value=0.27, max_value=3.49)
 # Speak the prompts if they haven't been spoken before
 if not get_state().message_spoken['wind_speed']:
-    speak1("Enter Wind Speed")
+    #speak1("Enter Wind Speed")
     get_state().message_spoken['wind_speed'] = True
 #time.sleep(4) 
 
@@ -147,20 +139,20 @@ if not get_state().message_spoken['wind_speed']:
 # Number input for precipitation with a specified range
 precipitation = st.number_input('Precipitation', min_value=1009, max_value=1023)
 if not get_state().message_spoken['precipitation']:
-    speak1("Enter Precipitation")
+    #speak1("Enter Precipitation")
     get_state().message_spoken['precipitation'] = True
 #speak("Precipitation")
 # Number input for humidity with a specified range
 humidity = st.number_input('Humidity', min_value=37, max_value=97)
 if not get_state().message_spoken['humidity']:
-    speak1("Enter Humidity")
+    #speak1("Enter Humidity")
     get_state().message_spoken['humidity'] = True
 #time.sleep(2) 
 #speak("Humidity")
 soil_types = ['clay', 'sandy', 'peaty', 'chalky', 'silt', 'silty', 'loamy']
 #soil_type = st.selectbox('Soil Type', soil_types)
 if not get_state().message_spoken['soil_type']:
-    speak1("Enter Soil Type")
+    #speak1("Enter Soil Type")
     get_state().message_spoken['soil_type'] = True
 
 
@@ -183,7 +175,7 @@ if st.button('Predict'):
     if not st.session_state.message_spoken['prediction']:
                 
             
-        speak1("click below audio paly to listen predicted crop yield")
+        #speak1("click below audio paly to listen predicted crop yield")
         get_state().message_spoken['prediction'] = True
         #engine.stop()
     speak( str(prediction)+" tons per hectare is the predicted crop yield from the given information" )

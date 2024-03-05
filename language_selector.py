@@ -26,7 +26,7 @@ def select_language(language):
         st.write("Please select the English version of the app.")
         # Button to navigate to the English version of the app
         if st.button("Go to English version"):
-            #run_app("app.py")
+            run_app("app.py")
             pass
     elif language == "తెలుగు":
         #speak("దయచేసి తెలుగు సంస్కరణం ఎంచుకోండి.")

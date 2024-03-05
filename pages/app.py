@@ -32,7 +32,15 @@ def predict_production(state_names, district_names, season_names, crop_names, ar
 
 # Streamlit UI
 st.title('Crop Yield Prediction')
-engine = pyttsx3.init()
+engine = None
+
+def get_engine():
+    global engine
+    if engine is None:
+        import pyttsx3
+        engine = pyttsx3.init()
+    return engine
+
 
 # Function to convert text to speech
 #def speak1(text):

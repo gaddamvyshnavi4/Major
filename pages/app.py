@@ -9,7 +9,7 @@ from io import BytesIO
 pickled_model=pickle.load(open('dtr1.pkl','rb'))
 f=pickle.load(open('preprocessor1.pkl','rb'))
 def speak(text):
-    tts = gTTS(text=text, lang='te')
+    tts = gTTS(text=text, lang='en')
     mp3_fp = BytesIO()
     tts.write_to_fp(mp3_fp)
     audio_bytes = mp3_fp.getvalue()

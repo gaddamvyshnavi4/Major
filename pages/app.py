@@ -40,7 +40,7 @@ def get_engine():
         import pyttsx3
         engine = pyttsx3.init()
     return engine
-
+engine = get_engine()
 
 # Function to convert text to speech
 #def speak1(text):

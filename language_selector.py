@@ -1,3 +1,4 @@
+import pygame
 import streamlit as st
 from streamlit_option_menu import option_menu
 import streamlit as st
@@ -6,7 +7,10 @@ import time
 
 # Set Streamlit app to wide mode
 st.set_page_config(layout="wide")
-
+pygame.mixer.init()
+def play_audio(file_path):
+    pygame.mixer.music.load(file_path)
+    pygame.mixer.music.play()
 # Define custom CSS for green text and radiant outline
 custom_css = """
 <style>
@@ -98,10 +102,9 @@ if selected=="English":
 
     # Speak the message for introduction if it hasn't been spoken before
     if not get_state().message_spoken['intro']:
-        #speak1("Please provide the following details for crop yield prediction.")
-        g = gTTS( "Please provide the following details for crop yield prediction.",lang='en-uk', slow=False)
+        g = gTTS("Please provide the following details for crop yield prediction.", lang='en-uk', slow=False)
         g.save("eintro.mp3")
-        playsound("eintro.mp3")
+        play_audio("eintro.mp3")
         os.remove('eintro.mp3')
         get_state().message_spoken['intro'] = True
 

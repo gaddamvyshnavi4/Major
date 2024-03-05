@@ -43,12 +43,12 @@ def get_engine():
 engine = get_engine()
 
 # Function to convert text to speech
-#def speak1(text):
-#    if not engine._inLoop:
-#        engine.say(text)
-#        engine.startLoop(False)
-#        engine.iterate()
-#        engine.endLoop()
+def speak1(text):
+    if not engine._inLoop:
+        engine.say(text)
+        engine.startLoop(False)
+        engine.iterate()
+        engine.endLoop()
 def get_state():
     return st.session_state
 
@@ -60,7 +60,7 @@ if 'message_spoken' not in get_state():
 
 # Speak the message for introduction if it hasn't been spoken before
 if not get_state().message_spoken['intro']:
-    speak1("Please provide the following details for crop yield prediction.")
+    #speak1("Please provide the following details for crop yield prediction.")
     get_state().message_spoken['intro'] = True
 
 # Speak the message for state names if it hasn't been spoken before

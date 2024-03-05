@@ -99,7 +99,7 @@ def select_language(language):
             if not get_state().message_spoken['state']:
                 #speak1("Enter State Name")
                 get_state().message_spoken['state'] = True
-                state_names = st.selectbox('Select State Name', state_names_options)
+            state_names = st.selectbox('Select State Name', state_names_options)
 
 
 

@@ -3,10 +3,10 @@ import subprocess
 import pyttsx3
 # Function to convert text to speech
 
-engine = pyttsx3.init()
-def speak(text):
-    engine.say(text)
-    engine.runAndWait()
+#engine = pyttsx3.init()
+#def speak(text):
+#    engine.say(text)
+#    engine.runAndWait()
 
 # Function to run the Streamlit app with subprocess
 def run_app(app_name):

@@ -50,14 +50,18 @@ body {
     st.markdown(background_css, unsafe_allow_html=True)
 
 if selected == "English":
-    pickled_model = pickle.load(open('dtr1.pkl', 'rb'))
-    f = pickle.load(open('preprocessor1.pkl', 'rb'))
+    import os
+    from gtts import gTTS
+    import base64
+    import streamlit as st
+    import pickle
+    import numpy as np
+    import pyttsx3
+    from io import BytesIO
+    import playsound
 
-    def predict_production(state_names, district_names, season_names, crop_names, area, temperature, wind_speed, precipitation, humidity, soil_type):
-        features = np.array([[state_names, district_names, season_names, crop_names, area, temperature, wind_speed, precipitation, humidity, soil_type]], dtype=object)
-        transformed_features = f.transform(features)
-        predicted_production = pickled_model.predict(transformed_features).reshape(1, -1)
-        return predicted_production[0]
+    from playsound import playsound
+    from gtts import gTTS
 
     # Streamlit UI
     st.title('Crop Yield Prediction')

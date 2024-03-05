@@ -150,7 +150,7 @@ def select_language(language):
 # Number input for temperature with a specified range
             temperature = st.number_input('Temperature', min_value=2.43, max_value=26.0)
             if not get_state().message_spoken['temperature']:
-                speak1("Enter Temperature")
+                #speak1("Enter Temperature")
                 get_state().message_spoken['temperature'] = True
 #time.sleep(4) 
 #speak("Temperature")

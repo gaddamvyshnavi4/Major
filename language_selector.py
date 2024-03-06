@@ -10,7 +10,13 @@ import playsound
 
 from playsound import playsound
 from gtts import gTTS
-g = gTTS( "Please provide the following details for crop yield prediction.",lang='en-uk', slow=False)
-g.save("eintro.mp3")
-playsound("eintro.mp3")
-os.remove('eintro.mp3')
+def speak(text):
+    tts = gTTS(text=text, lang='en')
+    mp3_fp = BytesIO()
+    tts.write_to_fp(mp3_fp)
+    audio_bytes = mp3_fp.getvalue()
+    audio_b64 = base64.b64encode(audio_bytes).decode()
+    audio_html = f'<audio autoplay="autoplay" controls="controls" style="width:100%"><source src="data:audio/mp3;base64,{audio_b64}" type="audio/mp3" /></audio>'
+    st.markdown(audio_html, unsafe_allow_html=True)
+
+speak("Predicted Production ")

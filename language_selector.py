@@ -162,6 +162,7 @@ if selected=="English":
             delay()
             delay()
             delay()
+            delay()
             
 
 
@@ -434,6 +435,7 @@ if selected=="తెలుగు":
             delay()
             delay()
             delay()
+            delay()
            
 
 
@@ -488,6 +490,7 @@ if selected=="తెలుగు":
             delay()
             delay()
             delay()
+            delay()
             
         
         
@@ -524,6 +527,7 @@ if selected=="తెలుగు":
             delay()
             delay()
             delay()
+            delay()
             
         get_state().message_spoken['district'] = True
     season_mapping = {
@@ -542,6 +546,7 @@ if selected=="తెలుగు":
     if not get_state().message_spoken['season']:
         delay1=speak1("ఋతువు పేరు నమోదు చేయండి")
         if delay1:
+            delay()
             delay()
             delay()
             delay()
@@ -573,6 +578,7 @@ if selected=="తెలుగు":
                 delay()
                 delay()
                 delay()
+                delay()
                 
             get_state().message_spoken['crop'] = True
 
@@ -581,6 +587,7 @@ if selected=="తెలుగు":
     if not get_state().message_spoken['area']:
         delay1=speak1("హెక్టార్లలో విస్తీర్ణాన్ని నమోదు చేయండి")
         if delay1:
+            delay()
             delay()
             delay()
             delay()
@@ -597,6 +604,7 @@ if selected=="తెలుగు":
             delay()
             delay()
             delay()
+            delay()
             
         get_state().message_spoken['temperature'] = True
     #time.sleep(4) 
@@ -608,6 +616,7 @@ if selected=="తెలుగు":
     if not get_state().message_spoken['wind_speed']:
         delay1=speak1("గాలి వేగాన్ని నమోదు చేయండి")
         if delay1:
+            delay()
             delay()
             delay()
             delay()

@@ -125,7 +125,7 @@ if selected=="About":
             top: 250px; /* Adjust this value to position the text box below the navigation bar */
             right: 200px; /* Adjust this value to position the text box from the right */
             width: 700px; /* Adjust the width of the text box */
-             background-color: rgba(240, 240, 240, 0.7); /* Background color */
+             background-color: rgba(0, 0, 255, 0.4); /* Background color */
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -142,17 +142,17 @@ if selected=="About":
         st.markdown("""
             <div class="info-text">
                 <h2></h2>
-                <p style="color:Blue;">Our application provides predictions of crop yield based on various parameters such as state, district, area (hectares), soil type, crop name, crop season, temperature (centigrade), wind speed (km/h), precipitation (mm), and humidity (percentage). The data used for prediction is gathered from multiple sources including Kaggle (2000-2014) and the Ministry of Agriculture and Farmer Welfare (2015-2021).</p>
+                <p style="color:Yellow;">Our application provides predictions of crop yield based on various parameters such as state, district, area (hectares), soil type, crop name, crop season, temperature (centigrade), wind speed (km/h), precipitation (mm), and humidity (percentage). The data used for prediction is gathered from multiple sources including Kaggle (2000-2014) and the Ministry of Agriculture and Farmer Welfare (2015-2021).</p>
                 <h2><strong>Features:</strong></h2>
                 <p></p>
             <ul>
-                <li style="color:Blue;">Predict crop yield based on user-provided parameters.</li>
-                <li style="color:Blue;">Available in both English and Telugu languages for wider accessibility.</li>
-                <li style="color:Blue;">Utilizes data from reputable sources for accurate predictions.</li>
-                <li style="color:Blue;">Provides valuable insights for farmers and agriculture professionals.</li>
+                <li style="color:Yellow;">Predict crop yield based on user-provided parameters.</li>
+                <li style="color:Yellow;">Available in both English and Telugu languages for wider accessibility.</li>
+                <li style="color:Yellow;">Utilizes data from reputable sources for accurate predictions.</li>
+                <li style="color:Yellow;">Provides valuable insights for farmers and agriculture professionals.</li>
             </ul>
-            <p><strong>Get Started:</strong></p>
-            <p>To get started, simply input the required parameters and click on the prediction button to receive accurate crop yield predictions.</p>
+            <p style="color:Yellow;"><strong>Get Started:</strong></p>
+            <p style="color:Yellow;">To get started, simply input the required parameters and click on the prediction button to receive accurate crop yield predictions.</p>
         </div>
         """, unsafe_allow_html=True)
             
@@ -166,7 +166,7 @@ if selected=="About":
                 top: 250px; /* Adjust this value to position the text box below the navigation bar */
                 right: 200px; /* Adjust this value to position the text box from the right */
                 width: 700px; /* Adjust the width of the text box */
-                background-color: rgba(240, 240, 240, 0.7); /* Background color */
+                background-color: rgba(0,0,225, 0.4); /* Background color */
                 padding: 10px;
                 border: 1px solid #ccc;
                 border-radius: 5px;
@@ -183,14 +183,14 @@ if selected=="About":
         st.markdown("""
             <div class="info-text">
                 <h2></h2>
-                <p style="color:Blue;">మా అప్లికేషన్ రాష్ట్రం, జిల్లా, ప్రాంతం (హెక్టార్లు), నేల రకం, పంట పేరు, పంట కాలం, ఉష్ణోగ్రత (సెంటీగ్రేడ్), గాలి వేగం (కిమీ/గం), అవపాతం (మిమీ) వంటి వివిధ పారామితుల ఆధారంగా పంట దిగుబడి అంచనాలను అందిస్తుంది. తేమ (శాతం). అంచనా కోసం ఉపయోగించే డేటా కాగ్లే (2000-2014) మరియు మినిస్ట్రీ ఆఫ్ అగ్రికల్చర్ అండ్ ఫార్మర్ వెల్ఫేర్ (2015-2021)తో సహా బహుళ మూలాల నుండి సేకరించబడింది..</p>
+                <p style="color:Yellow;">మా అప్లికేషన్ రాష్ట్రం, జిల్లా, ప్రాంతం (హెక్టార్లు), నేల రకం, పంట పేరు, పంట కాలం, ఉష్ణోగ్రత (సెంటీగ్రేడ్), గాలి వేగం (కిమీ/గం), అవపాతం (మిమీ) వంటి వివిధ పారామితుల ఆధారంగా పంట దిగుబడి అంచనాలను అందిస్తుంది. తేమ (శాతం). అంచనా కోసం ఉపయోగించే డేటా కాగ్లే (2000-2014) మరియు మినిస్ట్రీ ఆఫ్ అగ్రికల్చర్ అండ్ ఫార్మర్ వెల్ఫేర్ (2015-2021)తో సహా బహుళ మూలాల నుండి సేకరించబడింది..</p>
                 <h2><strong>లక్షణాలు:</strong></h2>
                 <p></p>
             <ul>
-                <li style="color:Blue;">వినియోగదారు అందించిన పారామితుల ఆధారంగా పంట దిగుబడిని అంచనా వేయండి.</li>
-                <li style="color:Blue;">విస్తృత యాక్సెసిబిలిటీ కోసం ఇంగ్లీష్ మరియు తెలుగు భాషల్లో అందుబాటులో ఉంది.</li>
-                <li style="color:Blue;">ఖచ్చితమైన అంచనాల కోసం ప్రసిద్ధ మూలాల నుండి డేటాను ఉపయోగిస్తుంది.</li>
-                <li style="color:Blue;">రైతులకు మరియు వ్యవసాయ నిపుణులకు విలువైన అంతర్దృష్టులను అందిస్తుంది.</li>
+                <li style="color:Yellow;">వినియోగదారు అందించిన పారామితుల ఆధారంగా పంట దిగుబడిని అంచనా వేయండి.</li>
+                <li style="color:Yellow;">విస్తృత యాక్సెసిబిలిటీ కోసం ఇంగ్లీష్ మరియు తెలుగు భాషల్లో అందుబాటులో ఉంది.</li>
+                <li style="color:Yellow;">ఖచ్చితమైన అంచనాల కోసం ప్రసిద్ధ మూలాల నుండి డేటాను ఉపయోగిస్తుంది.</li>
+                <li style="color:Yellow;">రైతులకు మరియు వ్యవసాయ నిపుణులకు విలువైన అంతర్దృష్టులను అందిస్తుంది.</li>
             </ul>
         </div>
         """, unsafe_allow_html=True) 

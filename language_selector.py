@@ -143,7 +143,7 @@ if selected=="About":
             <div class="info-text">
                 <h2></h2>
                 <p style="color:Yellow; font-size: 20px;">Our application provides predictions of crop yield based on various parameters such as state, district, area (hectares), soil type, crop name, crop season, temperature (centigrade), wind speed (km/h), precipitation (mm), and humidity (percentage). The data used for prediction is gathered from multiple sources including Kaggle (2000-2014) and the Ministry of Agriculture and Farmer Welfare (2015-2021).</p>
-                <h2 style="color:Yellow font-size: 20px;"><strong>Features:</strong></h2>
+                <h2 style="font-size: 20px;"><strong>Features:</strong></h2>
                 <p></p>
             <ul>
                 <li style="color:Yellow; font-size: 20px;">Predict crop yield based on user-provided parameters.</li>
@@ -184,7 +184,7 @@ if selected=="About":
             <div class="info-text">
                 <h2></h2>
                 <p style="color:Yellow;  font-size: 20px;">మా అప్లికేషన్ రాష్ట్రం, జిల్లా, ప్రాంతం (హెక్టార్లు), నేల రకం, పంట పేరు, పంట కాలం, ఉష్ణోగ్రత (సెంటీగ్రేడ్), గాలి వేగం (కిమీ/గం), అవపాతం (మిమీ) వంటి వివిధ పారామితుల ఆధారంగా పంట దిగుబడి అంచనాలను అందిస్తుంది. తేమ (శాతం). అంచనా కోసం ఉపయోగించే డేటా కాగ్లే (2000-2014) మరియు మినిస్ట్రీ ఆఫ్ అగ్రికల్చర్ అండ్ ఫార్మర్ వెల్ఫేర్ (2015-2021)తో సహా బహుళ మూలాల నుండి సేకరించబడింది..</p>
-                <h2 style="color:Yellow; font-size: 20px;"><strong>లక్షణాలు:</strong></h2>
+                <h2 style=" font-size: 20px;"><strong>లక్షణాలు:</strong></h2>
                 <p></p>
             <ul>
                 <li style="color:Yellow; font-size: 20px;">వినియోగదారు అందించిన పారామితుల ఆధారంగా పంట దిగుబడిని అంచనా వేయండి.</li>

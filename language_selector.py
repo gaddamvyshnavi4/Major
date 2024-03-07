@@ -67,10 +67,10 @@ st.markdown("<p class='green-text'><b>Welcome to the Crop Yield Prediction App!<
 
 selected=option_menu(
     menu_title=None,
-    options=["Home ","English","తెలుగు"],
-    icons=["house","alphabet-uppercase",""],
+    options=[" ","About","English","తెలుగు"],
+    icons=[" ","house","alphabet-uppercase",""],
     menu_icon="cast",
-    default_index=0,
+    default_index=1,
     orientation="horizontal",
 )
 
@@ -90,11 +90,56 @@ def speak1(text):
     audio_length = len(audio_bytes) / 1000  # Calculate audio length in seconds
     return audio_length
 
+def speak2(text):
+    tts = gTTS(text=text, lang='te')
+    mp3_fp = BytesIO()
+    tts.write_to_fp(mp3_fp)
+    audio_bytes = mp3_fp.getvalue()
+    audio_b64 = base64.b64encode(audio_bytes).decode()
+    audio_html = f'<audio autoplay="autoplay" style="width: 100%; max-width: 500px;"><source src="data:audio/mp3;base64,{audio_b64}" type="audio/mp3" /></audio>'
+    st.markdown(audio_html, unsafe_allow_html=True)
+    audio_length = len(audio_bytes) / 1000  # Calculate audio length in seconds
+    return audio_length
 
-if selected=="Home":
-    st.write("Our application provides predictions of crop yield based on various parameters such as state, district, area (hectares), soil type, crop name, crop season, temperature (centigrade), wind speed (km/h), precipitation (mm), and humidity (percentage). The data used for prediction is gathered from multiple sources including Kaggle (2000-2014) and the Ministry of Agriculture and Farmer Welfare (2015-2021)")
+if selected=="About":
+    import os
+    from gtts import gTTS
+    import base64
+    import streamlit as st
+    import pickle
+    import numpy as np
+
+    from io import BytesIO
+    import playsound
+
+    from playsound import playsound
+    from gtts import gTTS
+    selected1=  st.selectbox("Select a language", ["English", "తెలుగు"], index=None)
+    if selected1=="English":
+        delay1=speak1("To calculate crop yield prediction in English, please click the English")         
     
-    st.markdown("""
+        custom_css = """
+    <style>
+        .info-text {
+            position: abosolute;
+            top: 250px; /* Adjust this value to position the text box below the navigation bar */
+            right: 200px; /* Adjust this value to position the text box from the right */
+            width: 700px; /* Adjust the width of the text box */
+             background-color: rgba(240, 240, 240, 0.7); /* Background color */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 13px;
+        }
+    </style>
+    """
+
+        # Display the custom CSS
+        st.markdown(custom_css, unsafe_allow_html=True)
+
+        # Display the text box with the information
+        st.markdown("""
             <div class="info-text">
                 <h2></h2>
                 <p>Our application provides predictions of crop yield based on various parameters such as state, district, area (hectares), soil type, crop name, crop season, temperature (centigrade), wind speed (km/h), precipitation (mm), and humidity (percentage). The data used for prediction is gathered from multiple sources including Kaggle (2000-2014) and the Ministry of Agriculture and Farmer Welfare (2015-2021).</p>
@@ -109,8 +154,49 @@ if selected=="Home":
             <p><strong>Get Started:</strong></p>
             <p>To get started, simply input the required parameters and click on the prediction button to receive accurate crop yield predictions.</p>
         </div>
-        """,
-          unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
+            
+    if selected1=="తెలుగు":
+        delay1=speak2("తెలుగులో పంట దిగుబడి అంచనాను లెక్కించడానికి, దయచేసి తెలుగు బటన్‌ను క్లిక్ చేయండి.")
+    
+        custom_css = """
+        <style>
+            .info-text {
+                position: abosolute;
+                top: 250px; /* Adjust this value to position the text box below the navigation bar */
+                right: 200px; /* Adjust this value to position the text box from the right */
+                width: 700px; /* Adjust the width of the text box */
+                background-color: rgba(240, 240, 240, 0.7); /* Background color */
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                font-size: 13px;
+            }
+        </style>
+        """
+
+        # Display the custom CSS
+        st.markdown(custom_css, unsafe_allow_html=True)
+
+        # Display the text box with the information
+        st.markdown("""
+            <div class="info-text">
+                <h2></h2>
+                <p>మా అప్లికేషన్ రాష్ట్రం, జిల్లా, ప్రాంతం (హెక్టార్లు), నేల రకం, పంట పేరు, పంట కాలం, ఉష్ణోగ్రత (సెంటీగ్రేడ్), గాలి వేగం (కిమీ/గం), అవపాతం (మిమీ) వంటి వివిధ పారామితుల ఆధారంగా పంట దిగుబడి అంచనాలను అందిస్తుంది. తేమ (శాతం). అంచనా కోసం ఉపయోగించే డేటా కాగ్లే (2000-2014) మరియు మినిస్ట్రీ ఆఫ్ అగ్రికల్చర్ అండ్ ఫార్మర్ వెల్ఫేర్ (2015-2021)తో సహా బహుళ మూలాల నుండి సేకరించబడింది..</p>
+                <h2><strong>లక్షణాలు:</strong></h2>
+                <p></p>
+            <ul>
+                <li>వినియోగదారు అందించిన పారామితుల ఆధారంగా పంట దిగుబడిని అంచనా వేయండి.</li>
+                <li>విస్తృత యాక్సెసిబిలిటీ కోసం ఇంగ్లీష్ మరియు తెలుగు భాషల్లో అందుబాటులో ఉంది.</li>
+                <li>ఖచ్చితమైన అంచనాల కోసం ప్రసిద్ధ మూలాల నుండి డేటాను ఉపయోగిస్తుంది.</li>
+                <li>రైతులకు మరియు వ్యవసాయ నిపుణులకు విలువైన అంతర్దృష్టులను అందిస్తుంది.</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True) 
+        
+
+    
 
 if selected=="English":
     import os
@@ -163,6 +249,8 @@ if selected=="English":
             delay()
             delay()
             delay()
+            delay()
+
             
 
 

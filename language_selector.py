@@ -451,7 +451,7 @@ if selected=="English":
         # Use HTML to customize the style with RGBA color for transparency
         st.write(f'<div style="background-color: rgba(0, 0, 225, 0.4); color: Yellow; padding: 10px; border-radius: 5px;">{prediction_value}</div>', unsafe_allow_html=True)
 
-        st.write(prediction[0])
+       
         #speak1("click below paly to listen")
             
             #tts(f"Predicted crop yield Production is {prediction[0]}")
@@ -782,9 +782,7 @@ if selected=="తెలుగు":
         # Use HTML to customize the style with RGBA color for transparency
         st.write(f'<div style="background-color: rgba(0, 0, 225, 0.4); color: Yellow; padding: 10px; border-radius: 5px;">{prediction_value}</div>', unsafe_allow_html=True)
 
-        st.write(prediction[0])
- 
-        st.write(prediction[0])
+        
         if not st.session_state.message_spoken['prediction']:
             #speak1("పంట దిగుబడి ఎంత అంచనా వేయబడిందో వినడానికి దిగువ ఆడియో క్లిక్ చేయండి")
             get_state().message_spoken['prediction'] = True
